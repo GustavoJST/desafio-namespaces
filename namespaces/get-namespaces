@@ -1,0 +1,31 @@
+#!/bin/sh
+echo "content-type: text/html"
+echo
+
+kubectl get namespaces -A > namespaces.html
+
+echo "<html lang="pt-br">"
+echo "<head>"
+    echo "<meta charset=UTF-8>"
+    echo "<meta http-equiv='X-UA-Compatible' content='IE=edge'>"
+    echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>"
+    echo "<title>Namespaces</title>"
+echo "</head>"
+echo "<body>"
+    echo "<div>"
+        echo "<h1>"
+            echo "Namespaces"
+        echo "</h1>"
+        echo "<h3>"
+            echo "Lista de namespaces atualmente presentes no cluster:"
+        echo "</h3>"
+        echo "<pre>"
+            echo "$(cat ./namespaces.html)"
+        echo "</pre>"
+        echo "<footer>"
+            timestamp="$(date +'%d/%m/%Y - %H:%M:%S')"
+            echo "Atualizado dia $timestamp."
+        echo "</footer>
+    echo "</div>"
+echo "</body>"
+echo "</html>"
