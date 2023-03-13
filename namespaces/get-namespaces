@@ -20,7 +20,9 @@ cat << EOF
         <h3>
             Lista de namespaces atualmente presentes no cluster:
         </h3>
-        <pre>$(cat ./namespaces.html)</pre>
+        <pre>
+            $(cat ./namespaces.html)
+        </pre>
         <footer>
             Última atualização - $(date +'%d/%m/%Y às %H:%M:%S').
         </footer>

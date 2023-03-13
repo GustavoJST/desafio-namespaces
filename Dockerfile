@@ -12,6 +12,6 @@ RUN chmod 755 /usr/lib/namespaces/get-namespaces
 WORKDIR /src
 ENV KUBECONFIG=/kubeconfig/kubeconfig.yaml
 ENV TZ=America/Sao_Paulo
-COPY get-namespaces.sh /src/
+COPY get-namespaces.sh misconfiguration.html /src/
 COPY index.html /usr/share/nginx/html/index.html
 ENTRYPOINT [ "sh", "get-namespaces.sh" ]
